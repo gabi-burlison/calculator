@@ -22,7 +22,7 @@ function divide(num1, num2) {
     return result;
 }
 
-const num1 = 5;
+const num1 = 10;
 const operator = {
     sum: "+",
     subtract: "-",
@@ -32,12 +32,24 @@ const operator = {
 const num2 = 5;
 
 function operate(num1, operator, num2) {
-    let result = 0;
-    if (operator === "+") {
-        return sum(num1, num2);
+    switch (operator) {
+        case "+": {
+            return sum(num1, num2);
+            break;
+        }
+        case "-": {
+            return subtract(num1, num2);
+            break;
+        }
+        case "*": {
+            return multiply(num1, num2);
+            break;
+        }
+        case "/": {
+            return divide(num1,num2);
+            break;
+        }
     }
-    return "Error";
 }
 
-console.log(operate(num1, operator.sum, num2));
-
+console.log(operate(num1, "+", num2))
